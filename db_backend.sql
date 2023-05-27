@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2023 at 10:58 PM
+-- Generation Time: May 27, 2023 at 04:26 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -39,33 +39,8 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`id`, `post_id`, `user_id`, `body`) VALUES
-(4, 5, 2, 'cccddd'),
-(6, 4, 4, 'fgfgf aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
-(7, 4, 4, 'gfgfg'),
-(8, 4, 4, 'gfgfg'),
-(9, 4, 4, 'gfgfg'),
-(10, 4, 4, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
-(11, 4, 4, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
-(12, 4, 4, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
-(13, 4, 4, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
-(14, 4, 4, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
-(15, 4, 4, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
-(16, 4, 4, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
-(17, 4, 4, '\"\"\"\"'),
-(18, 4, 4, '\"\"\"\"'),
-(19, 4, 4, 'sddddddddddd'),
-(20, 10, 2, 'aze'),
-(21, 10, 2, 'aze'),
-(22, 10, 2, 'aze'),
-(23, 10, 2, 'aze'),
-(24, 10, 2, 'aze'),
-(25, 12, 4, 'ddd'),
-(26, 12, 4, 'ytrrrrrrrrrrr'),
-(27, 12, 4, 'gfgd'),
-(28, 12, 4, 'aaaaaaaaa'),
-(29, 12, 4, 'rdtre'),
-(30, 12, 4, 'zerez'),
-(31, 12, 4, 'fdaze');
+(32, 16, 2, 'I\'ve been using XYZ Hosting for the past year, and I\'ve had a great experience with them. Their uptime has been excellent, and their customer support is always responsive and helpful. I would highly recommend giving them a try for your hosting needs.'),
+(33, 16, 4, 'i can help you with that ! try to look for BLUEHOST on internet.');
 
 -- --------------------------------------------------------
 
@@ -106,15 +81,8 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id`, `user_id`, `title`, `body`) VALUES
-(4, 4, 'this is the titlekkkk', 'can have this as a bodykkk'),
-(5, 4, 'aaaaaaaaa', 'c'),
-(6, 4, 'aaaaaaaaaaaaa', 'aaa'),
-(7, 4, 'ezaaaaaaaa', 'aze'),
-(8, 3, 'fff', 'qqq'),
-(9, 4, 'aze', 'eza'),
-(10, 4, 'azez', 'ezz'),
-(11, 4, 'ccc', 'xxx'),
-(12, 4, 'dada', 'aa');
+(16, 3, 'Looking for a reliable web hosting provider', 'I\'m currently searching for a web hosting provider to host my website. I need one that offers good uptime, excellent customer support, and reasonable pricing. Any recommendations or experiences with reliable hosting providers would be greatly appreciated.'),
+(17, 2, 'Best practices for securing a WordPress website', 'I\'m looking for some tips and best practices to enhance the security of my WordPress website. Are there any recommended security plugins or specific measures that I should take? I want to ensure that my website is protected from potential vulnerabilities ');
 
 -- --------------------------------------------------------
 
@@ -176,13 +144,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `user`

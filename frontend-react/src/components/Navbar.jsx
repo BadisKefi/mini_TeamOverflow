@@ -13,19 +13,19 @@ function Navbar({ user, setUser }) {
   };
   return (
     <>
-      <div className="container-fluid">
+      <div className="">
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container">
-            <Link to="/" className="navbar-brand">Team Ice</Link>
+            <Link to="/" className="navbar-brand"><i class="bi bi-cup-hot me-2"></i>Team Overflow</Link>
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <Link to="/posts" className="nav-link">all posts</Link>
+                <Link to="/posts" className="nav-link"><i class="bi bi-chat-left-text-fill me-2"></i>all posts</Link>
               </li>
             </ul>
-            <span class="navbar-text mx-3">welcome back {user.username}</span>
+            <span class="navbar-text mx-2">welcome back <i class="bi bi-person-circle"></i> {user.username}</span>
 
             <form onSubmit={handleSubmit}>
-              <button type="submit" className="btn btn-primary">Log out</button>
+              <button type="submit" className="btn btn-primary mx-2">Log out<i class="bi bi-box-arrow-right ms-2"></i></button>
             </form>
           </div>
         </nav>

@@ -35,20 +35,22 @@ function Posts({ user }) {
       <div className='container'>
         <h2>All Posts</h2>
         <Link to="/postform" className="btn btn-primary mb-3">
-          Create Post
+          <i class="bi bi-plus-circle me-2"></i>Create Post
         </Link>
         <ul className="list-group">
           {posts && posts.map((post) => (
             <li key={post.id} className="list-group-item d-flex justify-content-between align-items-center">
-              <Link to={`/comments/${post.id}`}>
-              <strong>{post.title}</strong>
-              <p>{post.user.username}</p>
+              <Link clessName="text-decoration-none" to={`/comments/${post.id}`}>
+                <strong>{post.title}</strong>
+                <p>{post.user.username}</p>
               </Link>
 
               {user && user.username === post.user.username ? (
                 <div>
-                  <Link to={`/postform/${post.id}`} className="btn btn-sm btn-primary me-2">Edit</Link>
-                  <button onClick={() => deletePostPopUp(post)} type="button" className="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</button>
+                  <div class="btn-group">
+                  <Link to={`/postform/${post.id}`} className="btn btn-sm btn-primary"><i class="bi bi-pencil me-2"></i> Edit</Link>
+                  <button onClick={() => deletePostPopUp(post)} type="button" className="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-trash3 me-2"></i>Delete</button>
+                  </div>
                 </div>
               ) : (
                 <div></div>
@@ -65,13 +67,13 @@ function Posts({ user }) {
                 <h5 class="modal-title" id="exampleModalCenterTitle">{postToDelete && postToDelete.title}</h5>
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              
+
               <div className="modal-body">
                 Are you sure you want to delete this post ?
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary" onClick={() => handleDeletePost(postToDelete)} data-bs-dismiss="modal">Delete</button>
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-x-circle me-2"></i>Close</button>
+                <button type="button" className="btn btn-primary" onClick={() => handleDeletePost(postToDelete)} data-bs-dismiss="modal"><i class="bi bi-trash3 me-2"></i>Delete</button>
               </div>
             </div>
           </div>

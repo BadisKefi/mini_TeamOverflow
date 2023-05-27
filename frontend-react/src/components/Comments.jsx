@@ -48,23 +48,25 @@ function Comments({ user }) {
   return (
     <>
       <div className='container'>
-      <h4>{post && post.title}</h4>
-      <h6>{post && post.body}</h6>
+        <h4>{post && post.title}</h4>
+        <h6>{post && post.body}</h6>
         <p>by : {post && post.user.username}</p>
         <Link to={`/commentForm/${id}`} className="btn btn-primary mb-3">
-          Create Comment
+          <i class="bi bi-plus-circle me-2"></i>Create Comment
         </Link>
         <ul className="list-group">
           {comments && comments.map((comment) => (
             <li key={comment.id} className="list-group-item d-flex justify-content-between align-items-center">
               <div>
-              <strong>{comment.body}</strong>
-              <p>{comment.user.username}</p>
+                <strong>{comment.body}</strong>
+                <p>{comment.user.username}</p>
               </div>
               {user && user.username === comment.user.username ? (
                 <div>
-                  <Link to={`/commentForm/${id}/${comment && comment.id}`} className="btn btn-sm btn-primary me-2">Edit</Link>
-                  <button onClick={() => deleteCommentPopUp(comment)} type="button" className="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</button>
+                  <div class="btn-group">
+                  <Link to={`/commentForm/${id}/${comment && comment.id}`} className="btn btn-sm btn-primary"><i class="bi bi-pencil me-2"></i>Edit</Link>
+                  <button onClick={() => deleteCommentPopUp(comment)} type="button" className="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-trash3 me-2"></i>Delete</button>
+                  </div>
                 </div>
               ) : (
                 <div></div>
@@ -78,16 +80,17 @@ function Comments({ user }) {
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">{commentToDelete && commentToDelete.title}</h5>
+                <h5 class="modal-title" id="exampleModalCenterTitle">{commentToDelete && commentToDelete.body.slice(0, 30)}...</h5>
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              
+
               <div className="modal-body">
                 Are you sure you want to delete this comment ?
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary" onClick={() => handleDeleteComment(commentToDelete)} data-bs-dismiss="modal">Delete</button>
+                
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-x-circle me-2"></i>Close</button>
+                <button type="button" className="btn btn-primary" onClick={() => handleDeleteComment(commentToDelete)} data-bs-dismiss="modal"><i class="bi bi-trash3 me-2"></i>Delete</button>
               </div>
             </div>
           </div>

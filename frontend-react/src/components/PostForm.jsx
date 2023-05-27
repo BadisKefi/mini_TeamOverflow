@@ -107,7 +107,7 @@ const PostForm = ({ user }) => {
             onChange={handleBodyChange}
           ></textarea>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary"><i class="bi bi-check-circle me-2"></i>
           {isEditing ? 'Update' : 'Create'}
         </button>
         <div className="alert">will be {isEditing ? 'updated' : 'created'} by : {user.username}</div>
