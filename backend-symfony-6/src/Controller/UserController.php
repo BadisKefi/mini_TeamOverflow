@@ -27,7 +27,7 @@ class UserController extends AbstractController
             $data[] = [
                 'id' => $user->getId(),
                 'username' => $user->getUsername(),
-                'password' => $user->getPassword(),
+                // 'password' => $user->getPassword(),
             ];
         }
   
@@ -56,6 +56,24 @@ class UserController extends AbstractController
   
         if (!$user) {
             return $this->json('No user found for id ' . $id, 404);
+        }
+  
+        $data = [
+            'id' => $user->getId(),
+            'username' => $user->getUsername(),
+            'password' => $user->getPassword(),
+        ];
+          
+        return $this->json($data);
+    }
+
+    #[Route('/user/username/{username}', name: 'user_showByUsername', methods: ['GET'])]
+    public function showByUsername(ManagerRegistry $doctrine, string $username): Response
+    {
+        $user = $doctrine->getRepository(User::class)->findOneByUsername($username);
+  
+        if (!$user) {
+            return $this->json('No user found for username ' . $username, 404);
         }
   
         $data = [

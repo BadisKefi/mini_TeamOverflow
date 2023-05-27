@@ -146,3 +146,13 @@ export async function getUserById(id) {
         return null;
     }
 }
+export async function getUserByUsername(username) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/user/username/${username}`);
+        const user = await response.json();
+        return user;
+    } catch (error) {
+        console.log(`Error fetching user with username ${username}:`, error);
+        return null;
+    }
+}

@@ -48,7 +48,8 @@ function Comments({ user }) {
   return (
     <>
       <div className='container'>
-        <h4>{post && post.title}</h4>
+      <h4>{post && post.title}</h4>
+      <h6>{post && post.body}</h6>
         <p>by : {post && post.user.username}</p>
         <Link to={`/commentForm/${id}`} className="btn btn-primary mb-3">
           Create Comment
