@@ -27,9 +27,9 @@ function Login({ user, setUser }) {
   return (
       <div class="container my-5">
         <div class="row">
-          <div class="col-3">
+          <div class="col-lg-3">
           </div>
-          <div class="col-6">
+          <div class="col-lg-6">
             <h2 className="fs-2 fw-medium font-monospace"><i class="bi bi-person-lines-fill"></i><span className="mx-3">Login</span></h2>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
@@ -62,7 +62,7 @@ function Login({ user, setUser }) {
             </form>
           </div>
         </div>
-        <div class="col-3">
+        <div class="col-lg-3">
 
         </div>
       </div>
