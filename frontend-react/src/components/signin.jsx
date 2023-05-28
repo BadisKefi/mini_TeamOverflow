@@ -84,7 +84,7 @@ function Signin() {
                                 onChange={(e) => setPassword2(e.target.value)}
                             />
                         </div>
-                        <button type="submit" className="btn btn-primary fw-medium font-monospace me-2">
+                        <button type="submit" className="btn btn-primary fw-medium font-monospace me-2  mb-2">
                             <i class="bi bi-box-arrow-in-right me-2"></i>Sign in
                         </button>
                         <Link to="/" className="btn btn-secondary">
