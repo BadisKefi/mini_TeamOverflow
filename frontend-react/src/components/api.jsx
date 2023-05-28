@@ -159,3 +159,19 @@ export async function getUserByUsername(username) {
         return null;
     }
 }
+
+export async function createUser(userData) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/user`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userData),
+        });
+        return response.json();
+    } catch (error) {
+        console.log("Error creating a user:", error);
+        return null;
+    }
+}

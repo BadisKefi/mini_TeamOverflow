@@ -38,17 +38,26 @@ class UserController extends AbstractController
     public function new(ManagerRegistry $doctrine, Request $request): Response
     {
         $entityManager = $doctrine->getManager();
-  
+        $jsonData = json_decode($request->getContent(), true);
+
+        $username = $jsonData['username'];
+        $password = $jsonData['password'];
+
         $user = new User();
-        $user->setUsername($request->request->get('username'));
-        $user->setPassword($request->request->get('password'));
+        $user->setUsername($username);
+        $user->setPassword($password);
+
+        $user2 = $entityManager->getRepository(User::class)->findOneByUsername($username);
+        if (!$user2) {
+            $entityManager->persist($user);
+            $entityManager->flush();
+            return $this->json('Created new user successfully with id ' . $user->getId());
+        }
+        else {
+            return $this->json('user already exist '); 
+        }
   
-        $entityManager->persist($user);
-        $entityManager->flush();
-  
-        return $this->json('Created new user successfully with id ' . $user->getId());
     }
-  
     #[Route('/user/{id}', name: 'user_show', methods: ['GET'])]
     public function show(ManagerRegistry $doctrine, int $id): Response
     {
